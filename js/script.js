@@ -17,27 +17,39 @@
 // Give the object one property called complain. complain's value should be a method (a function) which logs the string "Meow!".
 const cat = {
     complain: function() {
-        console.log("Meow!")
+        return "Meow!";
     }
 }
+// console.log(cat.complain);
 
 // Question 2
 // Select the h3 from the HTML using the querySelector method and assign it to a variable called heading.
 // Change its innerHTML value to "Updated heading".
+const heading = document.querySelector("h3");
+heading.textContent = "Updated heading";
 
 // Question 3
 // Use the style property on the heading variable from the question above to change its font size to "2em".
+heading.style = "font-size: 2em;";
 
 // Question 4
 // Add a class to the heading variable called subheading.
+heading.classList.add("subheading");
 
 // Question 5
 // Write code that selects all the p elements on a page and assigns them to a variable called paragraphs.
+const paragraphs = document.querySelectorAll("p");
 
 // Loop through the p elements and change the colour of each to "red".
+for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.color = "red";
+}
 
 // Question 6
-// Select the div with a class of results, assign it to a variable called resultsContainer and set its inner HTML to be <p>New paragraph</p> and its background colour to be yellow.
+// Select the div with a class of results, assign it to a variable called resultsContainer and set its inner HTML to be <>New paragraph</> and its background colour to be yellow.
+const resultsContainer = document.querySelector("results");
+const newParagraph = document.createElement("p")
+
 
 // Question 7
 // Create a function that has one parameter called list.
