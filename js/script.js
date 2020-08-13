@@ -69,24 +69,24 @@ listFunction(cats);
 // Return the HTML from the function.
 // Call the function and pass in the cats array as the argument.
 // Assign the return value of the function to the innerHTML property of the element on the HTML page with a class of cat-container.
-const catContainer = document.querySelector(".cat-container");
-
 function createCats(cats) {
-    
+    let finalHTML = "";
+
     for (let i = 0; i < cats.length; i++) {
         let catsName = cats[i].name;
         let catsAge = cats[i].age;
-        
         if(!catsAge) {
             catsAge = "Age unknown";
         } 
-        
-        let resultHTML = "";
-        resultHTML = `<div>
+
+        finalHTML += `<div>
                     <h5>${catsName}</h5>
                     <p>${catsAge}</p>
                 </div>`;
-        catContainer.innerHTML += resultHTML;
     }
+    return finalHTML;
 };
+
 createCats(cats);
+const catContainer = document.querySelector(".cat-container");
+catContainer.innerHTML = createCats(cats);
