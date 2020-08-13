@@ -38,16 +38,15 @@ heading.classList.add("subheading");
 
 // Question 5
 // Write code that selects all the p elements on a page and assigns them to a variable called paragraphs.
-const paragraphs = document.querySelectorAll("p");
-
 // Loop through the p elements and change the colour of each to "red".
+const paragraphs = document.querySelectorAll("p");
 for (let i = 0; i < paragraphs.length; i++) {
     paragraphs[i].style.color = "red";
 };
 
 // Question 6
 // Select the div with a class of results, assign it to a variable called resultsContainer and set its inner HTML to be <>New paragraph</> and its background colour to be yellow.
-const resultsContainer = document.querySelector(".results");
+const resultsContainer = document.querySelector("div.results");
 resultsContainer.innerHTML += "<p>New paragraph</p>"
 resultsContainer.style = "background-color: yellow";
 
@@ -73,19 +72,21 @@ listFunction(cats);
 const catContainer = document.querySelector(".cat-container");
 
 function createCats(cats) {
+    
     for (let i = 0; i < cats.length; i++) {
-        // console.log(cats[i].name)
         let catsName = cats[i].name;
         let catsAge = cats[i].age;
+        
         if(!catsAge) {
             catsAge = "Age unknown";
         } 
-        let html = "";
-        html = `<div>
+        
+        let resultHTML = "";
+        resultHTML = `<div>
                     <h5>${catsName}</h5>
                     <p>${catsAge}</p>
                 </div>`;
-        catContainer.innerHTML += html;
+        catContainer.innerHTML += resultHTML;
     }
 };
 createCats(cats);
